@@ -1,5 +1,7 @@
 
 let productsHTML = '';
+// generating html for each item in data; 
+// making it interactiv;
 products.forEach((product) => {
   productsHTML += `
     <div class="product-container">
@@ -59,7 +61,6 @@ products.forEach((product) => {
 
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
-
 // adding for each button 
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
@@ -82,8 +83,12 @@ document.querySelectorAll('.js-add-to-cart')
           quantity : 1
         })
       }
+      let cartQuantity = 0;
+      cart.forEach((item) => {
+        cartQuantity += item.quantity;
+      })
 
+      document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 
-      console.log(cart);
     });
   })
