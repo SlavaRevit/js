@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Calculator
+    </title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+      div { 
+        padding-left: 100px;
+        padding-top: 100px;
+      }
+      button {
+        height: 50px;
+        width: 50px;
+        border: none;
+        border-radius: 40px;
+        background-color: gray;
+        color: white;
+      }
+      input {
+        width: 205px;
+        height: 40px;
+        background-color: black;
+        border: solid;
+        border-width: 1px;
+        border-color: rgba(255, 255, 255, 0.603);
+        color: white;
+      }
+      .symbol {
+        background-color: rgb(255, 184, 51);
+        color: white;
+      }
+      .js-calculation {
+        color: white;
+      }
+    </style>
+    <div>
+      <p class="js-calculation"></p>
+      <p></p>
+      <button onclick="updateCalculations('1');">1</button>
+      <button onclick="updateCalculations('2');">2</button>
+      <button onclick="updateCalculations('3');">3</button>
+      <button class="symbol" onclick="updateCalculations('+');">+</button>
+      <p></p>
+      <button onclick="updateCalculations('4');">4</button>
+      <button onclick="updateCalculations('5');">5</button>
+      <button onclick="updateCalculations('6');">6</button>
+      <button class="symbol">-</button>
+      <p></p>
+      <button onclick="updateCalculations('7');">7</button>
+      <button onclick="updateCalculations('8');">8</button>
+      <button onclick="updateCalculations('9');">9</button>
+      <button onclick="updateCalculations('*');" class="symbol">*</button>
+      <p></p>
+      <button onclick="updateCalculations('0');">0</button>
+      <button onclick="updateCalculations('.');">.</button>
+      <button onclick="updateCalculations('=');">=</button>
+      <button onclick="updateCalculations('/');" class="symbol">/</button>
+      <p></p>
+      <button onclick="
+      calculation = '';
+      displayCalculation();
+      localStorage.setItem('calculation', calculation);
+      ">Clear</button>
+    </div>
+
+
+    <script>
+        let calculation = localStorage.getItem('calculation') || '';
+
+        // display the calculations when the page first loads.
+        displayCalculation();
+
+        function updateCalculations (value) {
+          calculation += value;
+
+          displayCalculation();
+          localStorage.setItem('calculation', calculation)
+        }
+
+
+        function displayCalculation() {
+          document.querySelector('.js-calculation').innerHTML = calculation;
+        }
+
+    </script>
+  </body>
+</html>

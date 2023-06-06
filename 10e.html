@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      10d
+    </title>
+    <style>
+      .toggle {
+        background-color:rgb(189, 189, 189);
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+      }
+      .is-toggle {
+        background-color:rgb(49, 49, 49);
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <button class="toggle" onclick="
+      let buttonElement = document.querySelector('.toggle');
+      if (buttonElement.classList.contains('is-toggle')) {
+        buttonElement.classList.remove('is-toggle')
+      } else if (!buttonElement.classList.contains('is-toggle')) {
+        buttonElement.classList.add('is-toggle')
+      }
+      ">Gaming</button>
+
+    <script>
+      
+    </script>
+  </body>
+</html>

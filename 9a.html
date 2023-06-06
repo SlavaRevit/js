@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      
+    </title>
+  </head>
+  <body>
+
+    <!-- <button onclick="
+      document.querySelector('.js-choice')
+        .innerHTML = 'You chose : heads';
+        ">heads</button>
+
+    <button onclick="document.querySelector('.js-choice')
+      .innerHTML = 'You chose : tails';
+      ">tails</button>
+
+    <p class="js-choice"></p> -->
+
+
+    <input type="text" placeholder="Name" class="js-input" onkeydown="
+    if (event.key  === 'Enter') {
+      printingName();
+    }
+    ">
+
+
+    <button onclick="
+        printingName();
+    ">submit</button>
+    
+
+    <p class="js-name"></p>
+    <script>
+      function printingName () {
+        const inputElement = document.querySelector('.js-input')
+        document.querySelector('.js-name')
+          .innerHTML = `Your name is ${inputElement.value}`
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      10d
+    </title>
+    <style>
+      .toggle {
+        background-color:rgb(189, 189, 189);
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+      }
+      .is-toggle {
+        background-color:rgb(49, 49, 49);
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <button class="toggle js-button1" onclick="is_turned('.js-button1');">Gaming</button>
+
+    <button class="toggle js-button2" onclick="is_turned('.js-button2');">Music</button>
+
+    <button class="toggle js-button3" onclick="is_turned('.js-button3');">Tech</button>
+
+    <script>
+      function is_turned (selector) {
+      const buttonElement = document.querySelector(selector);
+
+      if (!buttonElement.classList.contains('is-toggle')) {
+
+        turnOff();
+
+        buttonElement.classList.add('is-toggle')
+      }
+
+      else {
+        buttonElement.classList.remove('is-toggle')
+      }
+      }
+
+      function turnOff() {
+        const previousButton = document.querySelector('.is-toggle');
+        if (previousButton) {
+          previousButton.classList.remove('is-toggle')
+        }
+      }
+    </script>
+  </body>
+</html>

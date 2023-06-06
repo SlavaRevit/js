@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title class="change-title">
+      12g
+    </title>
+  </head>
+  <body>
+    <button onclick="
+      messages+=1;
+      displayNotification();
+      ">Add</button>
+    <button onclick="
+    if (messages >0) {
+      messages-=1;
+    
+    // If there are no new messages, stop displaying
+    // the notification in the tab.
+      if (messages === 0){
+        stopNotification();
+      }
+  }
+    ">Remove</button>
+    <script>
+        let messages = 4;
+        let isDisplayingNotification;
+        let intervalId;
+        displayNotification();
+
+
+        function displayNotification() {
+        // If we're already displaying the notification,
+        // stop this function because we don't want to
+        // create 2 intervals at the same time.
+          if (isDisplayingNotification) {
+            return;
+          }
+
+          isDisplayingNotification = true;
+        
+          intervalId = setInterval(function(){
+            if (messages === 0 || messages < 0) {
+              document.title === '12g'
+            }
+            else if (document.title === '12g') {
+              sms = `${messages} New messages`;
+              document.title = sms
+            }
+            else{
+              document.title = '12g';
+            }
+          },1000)
+      }
+
+        function stopNotification() {
+          isDisplayingNotification = false;
+          clearInterval(intervalId);
+          document.title = '12g'
+        }
+
+    </script>
+  </body>
+</html>

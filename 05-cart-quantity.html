@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      05-cart-quant
+    </title>
+  </head>
+  <body>
+      <p>
+        Cart Quantity
+      </p>
+      <button onclick="
+        console.log(`Cart Quantiy: ${CartQuantity}`);
+      ">
+        Show Quantity
+      </button>
+      <button onclick="
+        CartQuantity +=1;
+        console.log(`CartQuantity: ${CartQuantity}`)
+      ">
+        Add to cart
+      </button>
+      <button onclick="
+        CartQuantity += 2;
+        console.log(`CartQuantity: ${CartQuantity}`)
+      ">
+        +2
+      </button>
+      <button onclick="
+        CartQuantity += 3;
+        console.log(`CartQuantity: ${CartQuantity}`)
+      ">
+        +3
+      </button>
+
+      <button onclick="
+      CartQuantity -= 2;
+      console.log(`CartQuantity: ${CartQuantity}`)
+    ">
+      -2
+    </button>
+
+      <button onclick="
+      CartQuantity -= 3;
+      console.log(`CartQuantity: ${CartQuantity}`)
+    ">
+      -3
+    </button>
+
+      <button onclick="
+        CartQuantity = 0;
+        console.log(`Cart was reset: ${CartQuantity}`)
+      ">
+        Reset Cart
+      </button>
+    <script>
+      let CartQuantity = 0;
+    </script>
+  </body>
+</html>

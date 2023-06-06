@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        heads/teils game
+    </title>
+  </head>
+  <body>
+    <button onclick="
+      makeChoice('head')
+      ">
+      heads
+    </button>
+    <button onclick="
+    makeChoice('tails')
+    ">
+      tails
+    </button>
+    <button onclick="
+    score.wins = 0,
+    score.loses =0
+    ">
+      resetScore
+    </button>
+
+    <script>
+
+    let score = JSON.parse(localStorage.getItem('scorecheck')) || {
+      wins : 0,
+      loses: 0,
+      };
+
+
+    function makeChoice(myChoice) {
+      computerMove = ''
+      let randomNumber = Math.random();
+      if (randomNumber >0 && randomNumber <0.5) {computerMove = 'head';}
+      else if (randomNumber >0.5 && randomNumber <1) {
+        computerMove = 'tails';}
+      if (myChoice === computerMove) {
+        console.log('You win')
+        score.wins ++;}
+      else if (myChoice !== computerMove) {
+        console.log('You lose')
+        score.loses ++;}
+
+      localStorage.setItem('scorecheck', JSON.stringify(score))
+
+      alert(`You picked ${myChoice} and score is Wins:${score.wins}, Losses ${score.loses}`)
+
+      }
+
+    </script>
+  </body>
+</html>
